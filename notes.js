@@ -1,12 +1,15 @@
+// Get all notes from Local Storage
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
+// Get notes container
 let notesList = document.getElementById("notesList");
 
+// Display Notes Function
 function displayNotes(data){
 
     notesList.innerHTML = "";
 
-    data.forEach(function(note,index){
+    data.forEach(function(note, index){
 
         notesList.innerHTML += `
 
@@ -44,28 +47,34 @@ function displayNotes(data){
 
 }
 
+// Show all notes
 displayNotes(notes);
 
+// Download Function
 function downloadNote(file){
 
-alert("Downloading : " + file);
+    alert("Downloading : " + file);
 
 }
 
+// Search Notes
 let search = document.getElementById("search");
 
-search.addEventListener("keyup",function(){
+search.addEventListener("keyup", function(){
 
-let value = search.value.toLowerCase();
+    let value = search.value.toLowerCase();
 
-let filtered = notes.filter(function(note){
+    let filtered = notes.filter(function(note){
 
-return note.title.toLowerCase().includes(value);
+        return note.title.toLowerCase().includes(value);
+
+    });
+
+    displayNotes(filtered);
 
 });
 
-displayNotes(filtered);
-
+// Rating Function
 function rateNote(index){
 
     let rating = prompt("Enter Rating (1-5)");
@@ -86,6 +95,7 @@ function rateNote(index){
 
 }
 
+// Favorite Function
 function favoriteNote(index){
 
     notes[index].favorite = true;
@@ -94,8 +104,11 @@ function favoriteNote(index){
 
     alert("Added to Favorite ❤️");
 
+    displayNotes(notes);
+
 }
 
+// Delete Function
 function deleteNote(index){
 
     let confirmDelete = confirm("Delete this note?");
@@ -111,5 +124,3 @@ function deleteNote(index){
     }
 
 }
-
-});

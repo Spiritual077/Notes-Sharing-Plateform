@@ -5,18 +5,28 @@ form.addEventListener("submit", function(event){
     event.preventDefault();
 
     let email = document.getElementById("email").value;
-
     let password = document.getElementById("password").value;
 
-    if(email === "" || password === ""){
+    let savedUser = JSON.parse(localStorage.getItem("user"));
 
-        alert("Please fill all fields");
+    if(savedUser == null){
+
+        alert("Please Register First");
+        return;
 
     }
 
-    else{
+    if(email === savedUser.email && password === savedUser.password){
+
+        localStorage.setItem("loggedIn", "true");
 
         alert("Login Successful");
+
+        window.location.href = "profile.html";
+
+    }else{
+
+        alert("Invalid Email or Password");
 
     }
 
