@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h2>Upload Notes</h2>
+
+<form id="uploadForm">
+
+<label>Note Title</label>
+
+<input
+type="text"
+id="title"
+placeholder="Enter Note Title">
+
+<label>Subject</label>
+
+<select id="subject">
+
+<option value="">Select Subject</option>
+
+<option>Computer Network</option>
+
+<option>Data Structure</option>
+
+<option>Java</option>
+
+<option>Web Development</option>
+
+<option>Python</option>
+
+</select>
+
+<label>Description</label>
+
+<textarea
+id="description"
+placeholder="Write description"></textarea>
+
+<label>Select PDF</label>
+
+<input
+type="file"
+id="pdf">
+
+<button type="submit">
+
+Upload Notes
+
+</button>
+
+</form>
+
+</div>
+
+<script src="upload.js"></script>
+
+</body>
+
+</html>

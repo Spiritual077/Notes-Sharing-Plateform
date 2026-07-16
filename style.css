@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: whitesmoke;
+}
+
+header{
+    background: blue;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero{
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2{
+    font-size: 40px;
+}
+
+.hero p{
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+button{
+    padding:12px 25px;
+    background:#4b4be0;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.features{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background:white;
+    width:250px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+.login-container {
+    width: 350px;
+    background: white;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.login-container h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:5px;
+
+    border:1px solid gray;
+
+    border-radius:5px;
+
+}
+
+.login-container button{
+
+    width:100%;
+
+    margin-top:20px;
+
+}
+
+select,
+textarea{
+
+width:100%;
+
+padding:10px;
+
+margin-top:5px;
+
+margin-bottom:15px;
+
+border:1px solid gray;
+
+border-radius:5px;
+
+}
+
+textarea{
+
+height:120px;
+
+resize:none;
+
+}
+
+.notes-container{
+
+width:80%;
+
+margin:40px auto;
+
+}
+
+#search{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:20px;
+
+}
+
+.note-card{
+
+background:white;
+
+padding:20px;
+
+margin-bottom:20px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.2);
+
+}
+
+.note-card h3{
+
+margin-bottom:10px;
+
+}
+
+.note-card p{
+
+margin:8px 0;
+
+}
+
+.note-card button{
+
+margin-top:10px;
+
+}
