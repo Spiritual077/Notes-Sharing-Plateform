@@ -146,4 +146,56 @@ showTime();
 
 setInterval(showTime,1000);
 
+// Upload Progress
+
+let totalNotes = notes.length;
+
+// Maximum target
+let target = 20;
+
+// Progress Percentage
+let percent = (totalNotes / target) * 100;
+
+if(percent > 100){
+
+    percent = 100;
+
+}
+
+document.getElementById("progressBar").style.width =
+percent + "%";
+
+document.getElementById("progressText").textContent =
+totalNotes + " / " + target + " Notes Uploaded";
+
+// ==========================
+// Top Rated Note
+// ==========================
+
+let top = null;
+
+notes.forEach(function(note){
+
+    if(!top || (note.rating || 0) > (top.rating || 0)){
+
+        top = note;
+
+    }
+
+});
+
+if(top){
+
+    document.getElementById("topRatedNote").innerHTML = `
+
+        <h3>${top.title}</h3>
+
+        <p>Subject : ${top.subject}</p>
+
+        <p>⭐ ${top.rating || 0}/5</p>
+
+    `;
+
+}
+
 });

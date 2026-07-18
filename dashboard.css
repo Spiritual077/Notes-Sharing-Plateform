@@ -369,3 +369,70 @@ body{
     font-weight:bold;
 
 }
+
+/* Progress Section */
+
+.progress-section{
+
+    width:90%;
+
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.progress-card,
+.top-note{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+/* Progress Bar */
+
+.progress{
+
+    width:100%;
+
+    height:20px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    margin-top:20px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#22c55e;
+
+    transition:1s;
+
+}
+
+#progressText{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
