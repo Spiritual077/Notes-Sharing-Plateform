@@ -1,75 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Upload Notes</title>
 
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="upload.css">
 </head>
-
 <body>
 
-<div class="login-container">
+<header>
 
-<h2>Upload Notes</h2>
+    <h2>Notes Sharing Platform</h2>
 
-<form id="uploadForm">
+    <nav>
 
-<label>Note Title</label>
+        <a href="dashboard.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="profile.html">Profile</a>
 
-<input
-type="text"
-id="title"
-placeholder="Enter Note Title">
+    </nav>
 
-<label>Subject</label>
+</header>
 
-<select id="subject">
+<div class="upload-container">
 
-<option value="">Select Subject</option>
+    <h1>Upload Study Notes</h1>
 
-<option>Computer Network</option>
+    <form id="uploadForm">
 
-<option>Data Structure</option>
+        <label>Select PDF</label>
 
-<option>Java</option>
+    <div class="drop-area" id="dropArea">
 
-<option>Web Development</option>
+    <p>📄 Drag & Drop PDF Here</p>
 
-<option>Python</option>
+    <p>or</p>
 
-</select>
+    <input type="file" id="pdf" accept=".pdf">
 
-<label>Description</label>
+    </div>
+     <p id="fileName"></p>
+     
+        <label>Subject</label>
+        <input type="text" id="subject" placeholder="Enter Subject">
 
-<textarea
-id="description"
-placeholder="Write description"></textarea>
+        <label>Description</label>
+        <textarea id="description"
+        placeholder="Write short description"></textarea>
 
-<label>Select PDF</label>
+        <label>Select PDF</label>
+        <input type="file" id="pdf" accept=".pdf">
 
-<input
-type="file"
-id="pdf">
+        <button type="submit">
+            Upload Notes
+        </button>
 
-<button type="submit">
-
-Upload Notes
-
-</button>
-
-</form>
+    </form>
 
 </div>
 
 <script src="upload.js"></script>
 
 </body>
-
 </html>

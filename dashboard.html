@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <h2>Notes Sharing Platform</h2>
+
+        <ul>
+
+            <li><a href="dashboard.html">Home</a></li>
+
+            <li><a href="upload.html">Upload</a></li>
+
+            <li><a href="notes.html">Browse Notes</a></li>
+
+            <li><a href="profile.html">Profile</a></li>
+
+            <button id="themeBtn">🌙</button>
+        </ul>
+    </nav>
+
+    <div class="user-box">
+
+       <div id="avatar"></div>
+
+       <button id="logoutBtn">Logout</button>
+
+    </div>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+    <h1 id="welcomeUser"></h1>
+
+    <p>Ready to upload and manage your study notes.</p>
+
+    <a href="upload.html" class="btn">
+        Upload Notes
+    </a>
+
+</section>
+
+<div class="info-section">
+
+    <div class="info-card">
+
+        <h3>📅 Today</h3>
+
+        <p id="todayDate"></p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>⏰ Time</h3>
+
+        <p id="liveTime"></p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>👋 Greeting</h3>
+
+        <p id="greeting"></p>
+
+    </div>
+
+</div>
+
+    <section class="stats">
+
+    <div class="card">
+        <h3>Total Notes</h3>
+        <p id="totalNotes">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Favorite Notes</h3>
+        <p id="favoriteNotes">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Rated Notes</h3>
+        <p id="ratedNotes">0</p>
+    </div>
+
+</section>
+
+<section class="actions">
+
+    <h2>Quick Actions</h2>
+
+    <div class="action-buttons">
+
+        <a href="upload.html" class="btn">Upload Notes</a>
+
+        <a href="notes.html" class="btn">Browse Notes</a>
+
+        <a href="profile.html" class="btn">Profile</a>
+
+    </div>
+
+</section>
+
+<section class="recent-notes">
+
+    <h2>Recent Notes</h2>
+
+    <div id="recentNotes"></div>
+
+</section>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,43 +1,89 @@
 // Get all notes from Local Storage
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-// Get notes container
+// Get Notes Container
 let notesList = document.getElementById("notesList");
 
-// Display Notes Function
+// ===============================
+// Display Notes
+// ===============================
+
 function displayNotes(data){
 
     notesList.innerHTML = "";
 
-    data.forEach(function(note, index){
+    if(data.length === 0){
+
+        notesList.innerHTML = `
+            <h2 style="text-align:center;color:gray;">
+                No Notes Found 📂
+            </h2>
+        `;
+
+        return;
+    }
+
+    data.forEach(function(note,index){
 
         notesList.innerHTML += `
 
         <div class="note-card">
 
-            <h3>${note.title}</h3>
+            <div class="card-top">
 
-            <p><strong>Subject:</strong> ${note.subject}</p>
+                <span class="subject-badge">
+                    ${note.subject}
+                </span>
+
+                <span class="rating-badge">
+                    ⭐ ${note.rating || 0}/5
+                </span>
+
+            </div>
+
+            <h3>${note.title}</h3>
 
             <p>${note.description}</p>
 
-            <p>⭐ Rating : ${note.rating || 0}/5</p>
+            <p class="file-name">
+                📄 ${note.fileName}
+            </p>
 
-            <button onclick="downloadNote('${note.fileName}')">
-                Download
-            </button>
+            <div class="buttons">
 
-            <button onclick="rateNote(${index})">
-                Give Rating
-            </button>
+                <button
+                class="download"
+                onclick="downloadNote('${note.fileName}')">
 
-            <button onclick="favoriteNote(${index})">
-                ❤️ Favorite
-            </button>
+                    📥 Download
 
-            <button onclick="deleteNote(${index})">
-                🗑 Delete
-            </button>
+                </button>
+
+                <button
+                class="favorite"
+                onclick="favoriteNote(${index})">
+
+                    ${note.favorite ? "💚 Favorited" : "❤️ Favorite"}
+
+                </button>
+
+                <button
+                class="delete"
+                onclick="deleteNote(${index})">
+
+                    🗑 Delete
+
+                </button>
+
+                <button
+                class="rate"
+                onclick="rateNote(${index})">
+
+                    ⭐ Rate
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -47,26 +93,33 @@ function displayNotes(data){
 
 }
 
-// Show all notes
+// Show All Notes
 displayNotes(notes);
 
-// Download Function
+// ===============================
+// Download
+// ===============================
+
 function downloadNote(file){
 
     alert("Downloading : " + file);
 
 }
 
-// Search Notes
+// ===============================
+// Search
+// ===============================
+
 let search = document.getElementById("search");
 
-search.addEventListener("keyup", function(){
+search.addEventListener("keyup",function(){
 
     let value = search.value.toLowerCase();
 
     let filtered = notes.filter(function(note){
 
-        return note.title.toLowerCase().includes(value);
+        return note.title.toLowerCase().includes(value)
+        || note.subject.toLowerCase().includes(value);
 
     });
 
@@ -74,7 +127,10 @@ search.addEventListener("keyup", function(){
 
 });
 
-// Rating Function
+// ===============================
+// Rating
+// ===============================
+
 function rateNote(index){
 
     let rating = prompt("Enter Rating (1-5)");
@@ -83,11 +139,16 @@ function rateNote(index){
 
         notes[index].rating = rating;
 
-        localStorage.setItem("notes", JSON.stringify(notes));
+        localStorage.setItem(
+            "notes",
+            JSON.stringify(notes)
+        );
 
         displayNotes(notes);
 
-    }else{
+    }
+
+    else{
 
         alert("Invalid Rating");
 
@@ -95,20 +156,27 @@ function rateNote(index){
 
 }
 
-// Favorite Function
+// ===============================
+// Favorite Toggle
+// ===============================
+
 function favoriteNote(index){
 
-    notes[index].favorite = true;
+    notes[index].favorite = !notes[index].favorite;
 
-    localStorage.setItem("notes", JSON.stringify(notes));
-
-    alert("Added to Favorite ❤️");
+    localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+    );
 
     displayNotes(notes);
 
 }
 
-// Delete Function
+// ===============================
+// Delete
+// ===============================
+
 function deleteNote(index){
 
     let confirmDelete = confirm("Delete this note?");
@@ -117,7 +185,10 @@ function deleteNote(index){
 
         notes.splice(index,1);
 
-        localStorage.setItem("notes", JSON.stringify(notes));
+        localStorage.setItem(
+            "notes",
+            JSON.stringify(notes)
+        );
 
         displayNotes(notes);
 

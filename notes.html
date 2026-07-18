@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <head>
+<head>
 
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <title>Browse Notes</title>
+    <title>Browse Notes</title>
 
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="notes.css">
 
- </head>
+</head>
 
 <body>
 
-    <div class="notes-container">
+<header>
 
-        <h2>Browse Notes</h2>
+    <h2>Notes Sharing Platform</h2>
 
-        <input type="text" id="search" placeholder="Search Notes...">
+    <nav>
 
-        <div id="notesList"></div>
+        <a href="dashboard.html">Home</a>
+
+        <a href="upload.html">Upload</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+</header>
+
+<section class="notes-page">
+
+    <h1>Browse Notes</h1>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search Notes..."
+    >
+
+    <div id="notesList" class="notes-grid">
 
     </div>
 
-      <script src="notes.js"></script>
+</section>
+
+<script src="notes.js"></script>
 
 </body>
-
 </html>

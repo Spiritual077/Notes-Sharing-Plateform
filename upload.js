@@ -42,4 +42,34 @@ alert("Notes Uploaded Successfully");
 
 uploadForm.reset();
 
+let pdf = document.getElementById("pdf");
+
+let fileName = document.getElementById("fileName");
+
+pdf.addEventListener("change", function(){
+
+    let file = pdf.files[0];
+
+    if(!file){
+
+        return;
+
+    }
+
+    if(file.type !== "application/pdf"){
+
+        alert("Please Upload PDF Only");
+
+        pdf.value="";
+
+        fileName.textContent="";
+
+        return;
+
+    }
+
+    fileName.textContent="Selected File : " + file.name;
+
+});
+
 });
