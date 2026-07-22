@@ -239,33 +239,73 @@ body{
 
 }
 
-.dark{
+/* ===========================
+   Dark Mode
+=========================== */
 
-    background:#1e1e1e;
+body.dark{
+    background:#121212;
+    color:white;
+}
+
+/* Navbar */
+body.dark header{
+    background:#0f172a;
+}
+
+/* Navigation */
+body.dark nav a{
+    color:white;
+}
+
+/* All Cards */
+body.dark .card,
+body.dark .note-box,
+body.dark .info-card,
+body.dark .progress-card,
+body.dark .top-note{
+
+    background:#1f2937;
+    color:white;
+
+}
+
+/* Headings */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark span{
 
     color:white;
 
 }
 
-.dark .card,
-.dark .note-box{
+/* Input */
+body.dark input{
 
-    background:#2d2d2d;
+    background:#374151;
+    color:white;
+    border:1px solid #555;
+
+}
+
+/* Progress Bar Background */
+body.dark .progress{
+
+    background:#444;
+
+}
+
+/* Upload Progress Text */
+body.dark #progressText{
 
     color:white;
 
 }
 
-.dark nav{
-
-    background:#111;
-
-}
-
-.dark h1,
-.dark h2,
-.dark h3,
-.dark p{
+/* Top Rated Note */
+body.dark #topRatedNote{
 
     color:white;
 
